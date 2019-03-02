@@ -5,14 +5,26 @@ import java.util.Stack;
 /*
 Queue
 
-
 boolean	offer(E e)
 Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions.
 E	peek()
 Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
 E	poll()
 Retrieves and removes the head of this queue, or returns null if this queue is empty.
+*/
+/*
+Stack
 
+boolean	empty()
+Tests if this stack is empty.
+E	peek()
+Looks at the object at the top of this stack without removing it from the stack.
+E	pop()
+Removes the object at the top of this stack and returns that object as the value of this function.
+E	push(E item)
+Pushes an item onto the top of this stack.
+int	search(Object o)
+Returns the 1-based position where an object is on this stack.
 */
 public class Test {
     public static void main(String[] argv) {
