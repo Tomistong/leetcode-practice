@@ -10,24 +10,22 @@
 import java.util.ArrayList;
 
 class Solution {
+            
+    int minDiff = Integer.MAX_VALUE;
+    TreeNode prev;
+    
     public int getMinimumDifference(TreeNode root) {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        int min = Integer.MAX_VALUE;
-        
-        inOrder(root, arrayList);
-        
-        for (int i = 1; i < arrayList.size(); i++) {
-            min = Math.min(min, arrayList.get(i) - arrayList.get(i-1));
-        }
-        
-        return min;
+        inorder(root);
+        return minDiff;
     }
-    public void inOrder(TreeNode root, ArrayList arrayList) {
-        if (root == null) {
-            return;
-        }
-        inOrder(root.left, arrayList);
-        arrayList.add(root.val);
-        inOrder(root.right, arrayList);
+    
+    public void inorder(TreeNode root) {
+        if (root == null) return;
+        inorder(root.left);
+        // 設定前一個為prev，比較root跟prev
+        if (prev != null) minDiff = Math.min(minDiff, root.val - prev.val);
+        prev = root;
+        inorder(root.right);
     }
+
 }
